@@ -1,0 +1,15 @@
+{
+	"name": "backend",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"main": "server.js",
+	"author": "Mridxl",
+	"license": "ISC",
+	"description": "Simple backend using express and mongoDb",
+	"dependencies": {
+		"express": "^4.19.2",
+		"mongoose": "^8.5.3",
+		"zod": "^3.23.8"
+	}
+}
