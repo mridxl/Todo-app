@@ -1,14 +1,30 @@
 import CreateTodo from './components/CreateTodo';
 import Header from './components/Header';
-import TodoItems from './components/TodoItem';
+import TodoItems from './components/TodoItems';
+import { useState } from 'react';
 
 function App() {
+	const [todolist, setTodolist] = useState([
+		{
+			completed: false,
+			description: 'item 1',
+		},
+		{
+			completed: false,
+			description: 'item 2',
+		},
+		{
+			completed: true,
+			description: 'item 3',
+		},
+	]);
+
 	return (
 		<>
 			<section className="container">
 				<Header />
 				<CreateTodo />
-				<TodoItems />
+				<TodoItems todolist={todolist} setTodolist={setTodolist} />
 			</section>
 		</>
 	);
