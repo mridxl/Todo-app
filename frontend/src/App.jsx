@@ -23,7 +23,7 @@ function App() {
 		<>
 			<section className="container">
 				<Header />
-				<CreateTodo />
+				<CreateTodo todolist={todolist} setTodolist={setTodolist} />
 				<TodoItems todolist={todolist} setTodolist={setTodolist} />
 			</section>
 		</>
