@@ -31,7 +31,7 @@ The base URL for all API endpoints is:
   ```json
   {
     "_id": "todo_id",
-    "completed": boolean
+    "completed": "true/false"
   }
   ```
 - **Description:** Toggles the completion status of a Todo item.
