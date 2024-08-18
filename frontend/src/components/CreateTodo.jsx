@@ -7,6 +7,7 @@ function CreateTodo({ todolist, setTodolist }) {
 	const inputRef = useRef();
 
 	const addTodo = async () => {
+		if (newItem.trim().length === 0) return;
 		// add a tempId and optimistically update the UI
 		const tempId = uuid();
 		const newTodo = {
@@ -21,7 +22,6 @@ function CreateTodo({ todolist, setTodolist }) {
 			const response = await axios.post('http://localhost:8080/new', {
 				description: newItem,
 			});
-			console.log(response);
 			// Update the todo list with the actual ID from MongoDB
 			setTodolist((prevTodolist) =>
 				prevTodolist.map((todo) =>
@@ -39,7 +39,7 @@ function CreateTodo({ todolist, setTodolist }) {
 		setNewItem('');
 		inputRef.current.focus();
 	};
-	
+
 	return (
 		<>
 			<input

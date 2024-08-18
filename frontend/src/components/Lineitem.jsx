@@ -2,7 +2,7 @@ function Lineitem({ todo, completeTodo, deleteTodo }) {
 	return (
 		<li className={todo.completed ? 'todo-completed' : 'todo'}>
 			<div className="line-item">
-				<p className="todo-desc" onClick={() => completeTodo(todo._id)}>
+				<p className="todo-desc" onClick={() => completeTodo(todo._id, todo.completed)}>
 					{todo.description}
 				</p>
 				<button onClick={() => deleteTodo(todo._id)}>
