@@ -122,6 +122,14 @@ body {
 
 .toDoList {
     text-align: left;
+    margin: 0px;
+}
+
+.line-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding-right: 15%;   
 }
 
 .todo-completed {
@@ -139,16 +147,21 @@ body {
     display: inline;
     position: relative;
     padding: 0.5rem;
+    margin: 0px;
     cursor: pointer;
 }
 
-.toDoList>*>button {
+.toDoList>*>*>button {
     background: none;
     color: inherit;
     border: none;
     padding: 0;
     font: inherit;
-    cursor: default;
+    cursor: pointer;
     margin: 0;
     display: inline;
+}
+.trash-icon{
+    height: 1.2rem;
+    margin-top: 0.4rem;
 }
