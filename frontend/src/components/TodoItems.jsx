@@ -8,6 +8,9 @@ function TodoItems({ todolist, setTodolist }) {
 			)
 		);
 	};
+	const deleteTodo = (id) => {
+		setTodolist((prevTodos) => prevTodos.filter((todo) => todo._id !== id));
+	};
 	return (
 		<ol className="toDoList">
 			{todolist &&
@@ -17,6 +20,7 @@ function TodoItems({ todolist, setTodolist }) {
 							key={i}
 							todo={todo}
 							completeTodo={completeTodo}
+							deleteTodo={deleteTodo}
 						/>
 					);
 				})}
