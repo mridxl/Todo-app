@@ -1,26 +1,24 @@
+import axios from 'axios';
 import CreateTodo from './components/CreateTodo';
 import Header from './components/Header';
 import TodoItems from './components/TodoItems';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
-	const [todolist, setTodolist] = useState([
-		{
-			_id: '34567890-q3w4e5r6t',
-			completed: false,
-			description: 'item 1',
-		},
-		{
-			_id: '34568765-q3w4e5r6t',
-			completed: false,
-			description: 'item 2',
-		},
-		{
-			_id: '98we5678-q3w4e5r6t',
-			completed: true,
-			description: 'item 3',
-		},
-	]);
+	const [todolist, setTodolist] = useState([]);
+
+	useEffect(() => {
+		async function getTodos() {
+			try {
+				const response = await axios.get('http://localhost:8080/todos');
+				if (!response.data) throw new Error(`Can't fetch todos`);
+				setTodolist(response.data);
+			} catch (error) {
+				alert(error.message);
+			}
+		}
+		getTodos();
+	}, []);
 
 	return (
 		<>
